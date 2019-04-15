@@ -154,9 +154,12 @@
    }
 }
 
+.navigation__link:hover {
+  color: $mainBlue;
+}
+
 .navigation__link:focus,
 .navigation__link:active,
-.navigation__link:hover,
 .navigation__link--active {
   padding-bottom: 9px;
   color: $mainBlue;

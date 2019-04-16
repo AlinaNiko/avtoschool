@@ -41,3 +41,12 @@
   background-color: $mainBlue;
   color: $white;
 }
+
+.button:hover,
+.button:focus,
+.button:active {
+  color: $grey;
+  background-color: $yellow;
+  box-shadow: 0 0 23.28px 0.72px rgba(0, 0, 0, 0.46);
+}
+

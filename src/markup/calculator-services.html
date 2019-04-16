@@ -4,30 +4,36 @@
       <h2 class="calculator__title">Рассчитать <span class="calculator__title--color">стоимость</span> <span class="calculator__title--thin">документов</span></h2>
       <form class="calculator__form form" action="#">
         <ul class="form__list">
-          <li class="form__item">
+          <li class="form__item form__item--class">
             <h3 class="form__title">Категория</h3>
-            <label class="form__subtitle"><span class="visually-hidden">Категория A</span><input type="radio" name="class" value="class-a"></label>
-            <label class="form__subtitle"><span class="visually-hidden">Категория B</span><input type="radio" name="class" value="class-b"></label>
-            <label class="form__subtitle"><span class="visually-hidden">Категория C</span><input type="radio" name="class" value="class-c"></label>
-            <label class="form__subtitle"><span class="visually-hidden">Категория D</span><input type="radio" name="class" value="class-d"></label>
-            <label class="form__subtitle"><span class="visually-hidden">Категория CE</span><input type="radio" name="class" value="class-ce"></label>
+            <p class="form__wrapper">
+              <label class="form__subtitle"><input class="form__radio-button visually-hidden" type="radio" name="class" value="class-a" checked><span class="form__radio-text">А</span></label>
+              <label class="form__subtitle"><input class="form__radio-button visually-hidden" type="radio" name="class" value="class-b"><span class="form__radio-text">B</span></label>
+              <label class="form__subtitle"><input class="form__radio-button visually-hidden" type="radio" name="class" value="class-c"><span class="form__radio-text">C</span></label>
+              <label class="form__subtitle"><input class="form__radio-button visually-hidden" type="radio" name="class" value="class-d"><span class="form__radio-text">D</span></label>
+              <label class="form__subtitle"><input class="form__radio-button visually-hidden" type="radio" name="class" value="class-ce"><span class="form__radio-text">CE</span></label>
+            </p>
           </li>
-          <li class="form__item">
-              <h3 class="form__title">Доставка</h3>
-              <label class="form__subtitle"><span class="visually-hidden">Да</span><input type="radio" name="delivery" value="true"></label>
-              <label class="form__subtitle"><span class="visually-hidden">Нет</span><input type="radio" name="delivery" value="false"></label>
-              <p class="form__add-info">* 1 евро = 4,20 зл.</p>
+          <li class="form__item form__item--delivery">
+            <h3 class="form__title">Доставка</h3>
+            <p class="form__wrapper form__wrapper--delivery">
+              <label class="form__subtitle form__subtitle--delivery"><input class="form__radio-button visually-hidden" type="radio" name="delivery" value="true"><span class="form__radio-text">Да</span></label>
+              <label class="form__subtitle form__subtitle--delivery"><input class="form__radio-button visually-hidden" type="radio" name="delivery" value="false" checked><span class="form__radio-text">Нет</span></label>
+            </p>
+            <p class="form__add-info">* 1 евро = 4,20 зл.</p>
           </li>
-          <li class="form__item">
-              <h3 class="form__title">Права</h3>
-              <label class="form__subtitle"><span class="visually-hidden">Россия</span><input type="radio" name="country" value="russia"></label>
-              <label class="form__subtitle"><span class="visually-hidden">Украина</span><input type="radio" name="country" value="ukraine"></label>
+          <li class="form__item form__item--country">
+            <h3 class="form__title">Права</h3>
+            <p class="form__wrapper form__wrapper--country">
+              <label class="form__subtitle form__subtitle--country"><input class="form__radio-button visually-hidden" type="radio" name="country" value="russia"><span class="form__radio-text">Россия</span></label>
+              <label class="form__subtitle form__subtitle--country"><input class="form__radio-button visually-hidden"  type="radio" name="country" value="ukraine" checked><span class="form__radio-text">Украина</span></label>
+            </p>
           </li>
         </ul>
-        <button class="form__button" type="button">Рассчитать</button>
+        <button class="form__button button" type="button">Рассчитать</button>
       </form>
       <div class="calculator__result">
-        <p class="calculator__cost">Стоимость <span class="calculator__cost--number">0</span> евро</p>
+        <p class="calculator__cost">Стоимость: <span class="calculator__cost--number">0</span> евро</p>
         <button class="calculator__button" type="button">Подать заявку</button>
       </div>
     </div>

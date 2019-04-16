@@ -12,6 +12,8 @@
 //Top-Bar
 
 .top-bar {
+  position: relative;
+  z-index: 2;
 	max-width: 1454px;
 	margin: 30px auto 0;
 	padding: 60px 0;
@@ -240,6 +242,8 @@
 }
 
 .banner__container {
+  position: relative;
+  z-index: 2;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -297,11 +301,11 @@
   }
 }
 
-.banner__button:hover,
+/*.banner__button:hover,
 .banner__button:focus,
 .banner__button:active {
   color: $grey;
   background-color: $yellow;
-}
+}*/
 
 

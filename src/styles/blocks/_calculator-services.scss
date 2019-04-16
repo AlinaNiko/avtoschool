@@ -1,0 +1,381 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.main-content__calculator-services-wrapper {
+  position: relative;
+  background: $lightViolet url("../images/setvices-background.jpg") no-repeat;
+  background-size: cover;
+}
+
+
+//Calculator
+
+.calculator {
+  position: absolute;
+  top: -300px;
+  right: 0;
+  left: 0;
+  //margin-top: -300px;
+}
+
+.calculator__container {
+  position: relative;
+  padding: 60px 170px;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 38.8px 1.2px rgba(0, 0, 0, 0.16);
+  &::before {
+    @include pseudo();
+    top: -783px;
+    right: -100px;
+    width: 691px;
+    height: 783px;
+    background: url("../images/men.png") no-repeat;
+    z-index: 0;
+    @media (max-width: 860px) {
+      display: none;
+    }   
+  }
+  @media (max-width: 1225px) {
+    padding: 60px 100px;
+  }
+  @media (max-width: 1100px) {
+    padding: 60px 30px;
+  }
+  @include breakpoint (md) {
+    align-items: baseline;
+  }
+}
+
+.calculator__title {
+  font-weight: 600;
+  font-size: 36px;
+  text-transform: uppercase;
+  text-align: center;
+  @include breakpoint (sm) {
+    font-size: 28px;
+  }
+}
+
+.calculator__title--color {
+  color: $mainBlue;
+}
+
+.calculator__title--thin {
+  font-weight: 400;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 890px;
+  //margin-top: 40px;
+  margin: 40px auto 0;
+  @media (max-width:360px) {
+    margin: 40px 0 0;
+  }
+  
+}
+
+.form__list {
+  display: flex;
+  width: 100%;
+  @include breakpoint (lg) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @media (max-width:320px){
+    justify-content: flex-start;
+  }
+}
+
+.form__item {
+  width: calc(100% / 3);
+  min-width: 300px;
+  min-height: 230px;
+  padding: 40px;
+  text-align: center;
+  @include breakpoint (sm) {
+    padding: 40px 10px;
+    min-width: 270px;
+  }
+}
+
+.form__title {
+  font-weight: 600;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.form__item--class,
+.form__item--country {
+  background-color: #f8f8f8;
+  border: 1px solid #eee;
+}
+
+.form__item--delivery {
+  background-color: #eee;
+  border: 1px solid #eee;
+}
+
+.form__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 35px;
+ 
+}
+
+.form__subtitle {
+  position: relative;
+  width: 61px;
+  min-height: 40px;
+  padding: 12px 22px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 50px;
+  box-shadow: 0 0 8.9px 1.1px rgba(26, 154, 253, 0.14);
+  box-shadow: 0px 0px 15.52px 0.48px rgba(26, 154, 253, 0.28);
+  background-color: $white;
+}
+
+.form__radio-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.7;
+  text-transform: uppercase;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.form__radio-button:checked + .form__radio-text {
+  color: $white;
+  background-color: $mainBlue;
+  box-shadow: -7px 0 31.04px 0.96px rgba(26, 154, 253, 0.28);
+  //transform: scale(1.1);
+  height: 46px;
+  margin-top: -3px;
+  line-height: 2;
+  z-index: 2;
+}
+
+.form__subtitle--delivery {
+  width: 50%;
+  margin: 0;
+  box-shadow: none;
+}
+
+.form__wrapper--delivery {
+  flex-wrap: nowrap;
+  width: 100%;
+  background-color: $white;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15.52px 0.48px rgba(26, 154, 253, 0.28);
+  @include breakpoint (sm) {
+    width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.form__add-info {
+  margin-top: 30px;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: left;
+  @include breakpoint (sm) {
+    text-align: center;
+  }
+}
+
+.form__wrapper--country {
+  flex-wrap: nowrap;
+  width: 100%;
+  background-color: $white;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15.52px 0.48px rgba(26, 154, 253, 0.28);
+  @include breakpoint (sm) {
+    width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.form__subtitle--country {
+  width: 50%;
+  margin: 0;
+  box-shadow: none;
+}
+
+.form__subtitle--country .form__radio-text {
+  font-size: 18px;
+  line-height: 2.3;
+  text-transform: capitalize;
+}
+
+.form__subtitle--country .form__radio-button:checked + .form__radio-text {
+  line-height: 2.6;
+}
+
+.form__button {
+  min-width: 260px;
+  margin: 25px auto 0;
+  padding: 24px 76px;
+  font-size: 24px;
+  text-transform: uppercase;
+  background-color: $grey;
+  border-radius: 20px;
+  @media (max-width:360px) {
+    width: 260px;
+    padding: 30px;
+  }
+}
+
+.calculator__result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  @media (max-width: 640px) {
+    margin: 40px auto 0;
+  }
+}
+
+.calculator__cost {
+  margin-right: 70px;
+  font-weight: 600;
+  font-size: 24px;
+  @media (max-width: 640px) {
+    width: 100%;
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+.calculator__cost--number {
+  font-size: 36px;
+}
+
+.calculator__button {
+  min-width: 300px;
+  padding: 20px 40px;
+  font-weight: 600;
+  font-size: 24px;
+  color: $mainBlue;
+  text-transform: uppercase;
+  border: 3px solid $mainBlue;
+  border-radius: 20px;
+  &:hover {
+    color: $white;
+    background-color: $mainBlue;
+  }
+  @media (max-width: 640px) {
+    margin-top: 20px;
+    min-width: 260px;
+    padding: 20px 20px;
+  }
+}
+
+
+//Services
+
+.services {
+  padding-top: 400px;
+  padding-bottom: 65px;
+  @include breakpoint (lg) {
+    padding-top: 650px;
+  }
+  @media (max-width: 659px) {
+    padding-top: 900px;
+  }
+  @media (max-width: 640px) {
+    padding-top: 950px;
+  }
+  @media (max-width: 511px) {
+    padding-top: 1000px;
+  }
+}
+
+.services__title {
+  width: 100%;
+  margin-top: 40px;
+  font-weight: 600;
+  font-size: 36px;
+  text-transform: uppercase;
+  text-align: center;
+  @include breakpoint (sm) {
+    font-size: 28px;
+  }
+}
+
+.services__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 80px;
+  @media (max-width: 824px) {
+    justify-content: center;
+  }
+}
+
+.services__item {
+  position: relative;
+  width: calc((100% - 300px) / 3);
+  min-width: 255px;
+  //padding-top: 130px;
+  padding: 130px 10px 0;
+  text-align: center;
+  &::before {
+    @include pseudo();
+    top: 0;
+    left: 50%;
+    margin-left: -42px;
+    width: 84px;
+    height: 92px;
+    background: url("../images/document.png") no-repeat;
+  }
+  @include breakpoint (el) {
+    width: calc((100% - 100px) / 3);
+  }
+  @media (max-width: 824px) {
+    margin-bottom: 30px;
+  }
+}
+
+.services__subtitle {
+  font-weight: 600;
+  font-size: 24px;
+  @include breakpoint (sm) {
+    font-size: 18px;
+  }
+}
+
+.services__paragraph {
+  margin-top: 16px;
+  font-size: 16px;
+  @include breakpoint (sm) {
+    font-size: 14px;
+  }
+}
+
+.services__button {
+  width: 100%;
+  min-width: 200px;
+  margin-top: 40px;
+  padding: 16px 30px;
+  font-size: 24px;
+  text-transform: uppercase;
+  @include breakpoint (sm) {
+    font-size: 18px;
+  }
+}

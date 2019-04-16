@@ -1,0 +1,117 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.steps {
+  padding: 70px 0 120px 0;
+  background-color: #f4f4fb;
+}
+
+.steps__title {
+  width: 100%;
+  font-weight: 600;
+  font-size: 36px;
+  text-transform: uppercase;
+  text-align: center;
+  @include breakpoint (sm) {
+    font-size: 28px;
+  }
+}
+
+.steps__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  @media (max-width: 1169px) {
+    justify-content: space-around;
+  }
+}
+
+.steps__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc((100% - 90px) / 4);
+  min-width: 270px;
+  min-height: 400px;
+  margin-top: 48px;
+  padding-top: 220px;
+  &::before {
+    @include pseudo();
+    top: 0;
+    left: 50%;
+    margin-left: -89px;
+    width: 178px;
+    height: 178px;
+    border-radius: 50%;
+    background: url("../images/css_sprites.png") no-repeat;
+    box-shadow: 0 0 47.53px 1.47px rgba(7, 83, 141, 0.13);
+    z-index: 1;
+  }
+  @include breakpoint (sm) {
+    justify-content: flex-start;;
+  }
+}
+
+.steps__item:not(:last-of-type) {
+  margin-right: 10px;
+  &::after {
+    @include pseudo();
+    top: 50%;
+    right: -120px;
+    margin-top: -170px;
+    width: 220px;
+    height: 155px;
+    background: url("../images/car-track.png") no-repeat;
+    z-index: 0;
+    @media (max-width: 1169px) {
+      display: none;
+    }
+  }
+}
+
+.steps__item--registration::before {
+  background-position: -208px -208px;
+}
+
+.steps__item--residence-permit::before {
+  background-position: -10px -208px;
+}
+
+.steps__item--driving-school::before {
+  background-position: -10px -10px;
+}
+
+.steps__item--payment::before {
+  background-position: -208px -10px;
+}
+
+.steps__subtitle {
+  width: 100%;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  @include breakpoint (sm) {
+    font-size: 18px;
+  }
+}
+
+.steps__paragraph {
+  margin-top: 25px;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 24px;
+  @include breakpoint (sm) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+
+/*
+.bg-folder {
+  width: 95px; height: 95px;
+  background: url('css_sprites.png') -406px -10px;
+}*/

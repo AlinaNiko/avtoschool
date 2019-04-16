@@ -1,8 +1,9 @@
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
+
 .steps {
-  padding: 70px 0 120px 0;
+  padding: 70px 0 120px;
   background-color: #f4f4fb;
 }
 
@@ -108,10 +109,3 @@
     line-height: 21px;
   }
 }
-
-
-/*
-.bg-folder {
-  width: 95px; height: 95px;
-  background: url('css_sprites.png') -406px -10px;
-}*/

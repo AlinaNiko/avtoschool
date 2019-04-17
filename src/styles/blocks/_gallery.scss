@@ -6,6 +6,12 @@
   padding: 35px 0;
 }
 
+.gallery__container {
+  position: relative;
+  max-width: 100%;
+  padding: 0;
+}
+
 .gallery__title {
   width: 100%;
   font-weight: 600;
@@ -14,5 +20,55 @@
   text-align: center;
   @include breakpoint (sm) {
     font-size: 28px;
+  }
+}
+
+.carousel {
+  display: flex;
+  margin-top: 70px;
+  @include breakpoint (md) {
+    margin-top: 30px;
+  }
+}
+
+.carousel__slide {
+  width: 50%;
+  flex-shrink: 0;
+  @include breakpoint (md) {
+    width: 100%;
+  }
+}
+
+.carousel__image {
+  width: 100%;
+  height: auto;
+}
+
+.gallery__button {
+  position: absolute;
+  top: 50%;
+  width: 66px;
+  height: 107px;
+  background: url("../images/arrow.png") no-repeat;
+  @include breakpoint (sm) {
+    margin-top: 33px;
+    width: 33px;
+    height: 53.5px;
+    background-size: cover;
+  }
+}
+
+.gallery__button--left {
+  left:50px;
+  @include breakpoint (sm) {
+    left:30px;
+  }
+}
+
+.gallery__button--right {
+  right: 50px;
+  transform: rotate(180deg);
+  @include breakpoint (sm) {
+    right:30px;
   }
 }

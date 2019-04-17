@@ -1,0 +1,65 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.application {
+  padding: 65px 0;
+  background-color: $darkBlue;
+}
+
+.application__form {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding-left: 220px;
+  width: 100%;
+  @media (max-width: 1164px) {
+    justify-content: center;
+  }
+  &::before {
+    @include pseudo();
+    top: -250px;
+    left: -433px;
+    width: 661px;
+    height: 433px;
+    background: url("../images/car.png") no-repeat;
+    @include breakpoint (sm) {
+      display: none;
+    }
+  }
+  @include breakpoint (sm) {
+    padding-left: 0;
+  }
+}
+
+.application__subtitle{ 
+  @media (max-width: 1164px) {
+    margin-bottom: 20px;
+  }
+}
+
+.application__field {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  @include placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    color: #747373;
+  }
+  @include placeholderHidden;
+}
+
+.application__subtitle,
+.application__button {
+  min-width: 275px;
+  margin-left: 20px;
+  @include breakpoint (sm) {
+    margin-left: 0;
+  }
+}
+
+.application__button {
+  padding: 15px 40px;
+}

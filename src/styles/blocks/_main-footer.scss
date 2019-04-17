@@ -20,8 +20,7 @@
   }
 }
 
-.navigation__list {
-  font-size: 16px;
+.main-footer__navigation .navigation__list {
   @include breakpoint (sm) {
     text-align: center;
   }

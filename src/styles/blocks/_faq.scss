@@ -1,0 +1,108 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+
+.faq {
+  position: relative;
+  padding: 70px 0 100px;
+}
+
+.faq__title {
+  width: 100%;
+  font-weight: 600;
+  font-size: 36px;
+  text-transform: uppercase;
+  text-align: center;
+  @include breakpoint (sm) {
+    font-size: 28px;
+  }
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 50px;
+  box-shadow: 0 0 25.81px 3.19px rgba(26, 26, 26, 0.12);
+}
+
+.faq__subtitle {
+  padding: 30px 100px;
+  font-weight: 600;
+  font-size: 30px;
+  background-color: #f9f9f9;
+  list-style: none;
+  cursor: pointer;
+   position: relative;
+  &::before,
+  &::after {
+    @include pseudo();
+    top:50%;
+    right: 100px;
+    margin-top: -2px;
+    width: 20px;
+    height: 4px;
+    background-color: $grey;
+    @include breakpoint (sm) {
+      right: 50px;
+    } 
+    @media (max-width: 420px) {
+      right: 25px;
+    }
+  }
+  &::before {
+    transform: rotate(90deg);
+  }
+  @include breakpoint (sm) {
+    font-size: 24px;
+    padding: 30px 50px;
+  }
+  @media (max-width: 420px) {
+    font-size: 18px;
+    padding: 20px;
+  } 
+}
+
+.faq__item:nth-child(even) .faq__subtitle {
+  background-color: #eee;
+}
+
+.faq__item:nth-child(even) .faq__subtitle:hover,
+.faq__subtitle:hover{
+  color: $white;
+  background-color: $mainBlue;
+  &::before,
+  &::after {
+    background-color: $white;
+  }
+}
+
+.faq__details[open] .faq__subtitle {
+  color: $white;
+  background-color: $mainBlue;
+  &::before,
+  &::after {
+    background-color: $white;
+  }
+  &::before {
+    display: none;
+  }
+}
+
+.faq__paragraph {
+  padding: 70px 100px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  background-color: #f9f9f9;
+  @include breakpoint (md) {
+    font-size:16px;
+    line-height: 24px;
+    padding: 30px 50px;
+  }
+  @media (max-width: 420px) {
+    font-size: 14px;
+    line-height: 21px;
+    padding: 20px;
+  } 
+}

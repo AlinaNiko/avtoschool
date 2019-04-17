@@ -20,7 +20,7 @@
   }
 }
 
-.navigation__list {
+.main-footer__navigation .navigation__list {
   @include breakpoint (sm) {
     text-align: center;
   }

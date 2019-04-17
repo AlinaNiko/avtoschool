@@ -3,7 +3,10 @@
 
 
 .documents {
-  padding: 35px 0;
+  padding: 35px 0 160px;
+  @include breakpoint (sm) {
+    padding: 35px 0 100px;
+  }
 }
 
 .documents__title {

@@ -63,6 +63,10 @@
   } 
 }
 
+.faq__subtitle::-webkit-details-marker {
+  display: none;
+}
+
 .faq__item:nth-child(even) .faq__subtitle {
   background-color: #eee;
 }

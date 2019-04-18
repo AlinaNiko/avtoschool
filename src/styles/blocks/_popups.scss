@@ -4,7 +4,222 @@
 
 //Application-form
 
+.popup-application {
+  position: relative;
+  max-width: 770px;
+  margin: 0 auto;
+  padding: 50px 60px;
+  border: 2px solid #eee;
+  @include breakpoint (sm) {
+    padding: 50px 30px;
+  }
+}
 
+.popup-application__title {
+  width: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.popup-application__form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 40px;
+  @include breakpoint (md) {
+    flex-direction: column;
+  }
+}
+
+.popup-application__left-wrapper,
+.popup-application__right-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  min-width: 260px;
+  padding: 0 10px;
+  @include breakpoint (md) {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.popup-application__list--opened .popup-application__item {
+  position: relative;
+  padding: 10px 0;
+  min-height: 40px;
+}
+
+.popup-application__list--opened .popup-application__class {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  line-height: 2.8;
+}
+
+.popup-application__subtitle,
+.popup-application__class,
+.popup-application__paragraph {
+  
+  font-weight: 400;
+  font-size: 14px;
+  color: #777;
+}
+
+.popup-application__subtitle {
+  margin-top: 10px;
+}
+
+.popup-application__list--closed .popup-application__class {
+  margin-left: 10px;
+}
+
+.popup-application__field,
+.license-country {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  margin-top: -10px;
+  padding: 10px 20px;
+  border: 2px solid #eee;
+}
+
+.popup-application__list-title {
+  display: inline-block;
+}
+
+.popup-application__subtitle-text,
+.popup-application__list-title {
+  padding: 0 10px;
+  margin-left: 20px;
+  background-color: $white;
+}
+
+.popup-application__list--closed .popup-application__item {
+  display: none;
+    &--active {
+      display: inline-block;
+    }
+}
+
+.popup-application__list--opened .popup-application__item:not(:last-of-type) {
+  border-bottom: .4px solid #eee;
+}
+
+.popup-application__item:hover,
+.popup-application__class:hover {
+  cursor: pointer;
+}
+
+.popup-application__list--opened .popup-application__item:hover,
+.popup-application__list--opened .popup-application__item:active,
+.popup-application__list--opened .popup-application__item:focus {
+  background-color: #eee;
+}
+
+.popup-application__field:checked + .popup-application__class-text {
+  color: $mainBlue;
+}
+
+.popup-application__list-wrapper {
+  position: relative;
+}
+
+.popup-application__list-button {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  width: 0; 
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 12px solid $mainBlue;
+}
+
+.popup-application__list--closed + .popup-application__list-button {
+  top: 35px;
+}
+
+.popup-application__list--opened + .popup-application__list-button {
+  transform: rotate(90deg);
+}
+
+.popup-application__paragraph {
+  margin-top: 20px;
+  text-decoration: underline;
+}
+
+.popup-application__adress-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 20px 10px;
+  border: 2px solid #eee;
+  @include breakpoint (md) {
+    justify-content: space-around;
+  }
+  @media (max-width: 360px) {
+    flex-direction: column;
+  }
+}
+
+.popup-application__subtitle-legend {
+  margin-left: 10px;
+  padding: 0 10px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #777;
+  background-color: $white;
+}
+
+.popup-application__subtitle--adress {
+  width: 130px;
+  margin-left: 0;
+  margin-top: 20px;
+  @media (max-width: 360px) {
+    width: 100%;
+  }
+}
+
+.license-country {
+  appearance: none;
+  cursor: pointer;
+}
+
+.popup-application__select-country {
+  position: relative;
+  &::before {
+    @include pseudo();
+    top: 20px;
+    right: 20px;
+    width: 0; 
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid $mainBlue;
+  }
+}
+
+.popup-application__add-info {
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+.popup-application__button {
+  margin: 30px auto 0;
+  padding: 15px 30px;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
 
 
 //Congratulation

@@ -19,7 +19,7 @@
 	padding: 60px 0;
 	background-color: $darkBlue;
   background-image: linear-gradient(0deg, rgb(60,64,89) 0%, rgb(44,46,69) 100%);
-  @include breakpoint (md) {
+  @include breakpoint (el) {
     margin: 0 auto;
   }
 }
@@ -27,10 +27,7 @@
 .top-bar__container {
   flex-wrap: nowrap;
 	justify-content: space-between;
-  align-items: center;
-  @media (max-width: 1131px) {
-    align-items: flex-start;
-  }
+  align-items: flex-start;
   @include breakpoint (sm) {
     flex-wrap: wrap;
   }
@@ -38,9 +35,6 @@
 
 .top-bar__logo {
   min-width: 96px;
-  @media (max-width: 470px) {
-    order: 0;
-  }
 }
 
 .top-bar__logo-image {
@@ -49,24 +43,28 @@
 }
 
 .navigation {
+  display: flex;
   max-width: 970px;
   min-height: 34px;
   margin-left: 20px;
-  @include breakpoint (md) {
+  @include breakpoint (el) {
+    flex-direction: column;
     position: relative;
     width: 200px;
     margin-left: 0;
   }
   @media (max-width: 470px) {
-    order: 2;
-    margin: 20px auto 0;
+    margin: 0 0 0 20px;
+  }
+  @media (max-width: 375px) {
+    margin: 30px auto 0;
     width: 100%;
   }
 }
 
 .navigation__toggle {
   display: none;
-  @include breakpoint (md) {
+  @include breakpoint (el) {
     position: absolute;
     top: 9px;
     right: 5px;
@@ -117,25 +115,14 @@
   text-transform: uppercase;
   text-align: left;
   color: $white;
-  @media (max-width: 1131px) {
-    justify-content: center;
-  }
-  @include breakpoint (md) {
+  @include breakpoint (el) {
     flex-direction: column;
-  }
-}
-
-.navigation__item {
-  @media (max-width: 1131px) {
-    margin-bottom: 20px;
-  }
-  @include breakpoint (md) {
-    margin-bottom: 0;
+    justify-content: center;
   }
 }
 
 .navigation--closed .navigation__item {
-  @include breakpoint(md) {
+  @include breakpoint(el) {
     display: none;
     &--active {
       display: block;
@@ -143,16 +130,22 @@
   }
 }
 
+.navigation--closed .language-toggle {
+  @include breakpoint(el) {
+    display: none;
+  }
+}
+
 .navigation__item:not(:last-of-type) {
   margin-right: 20px;
-  @include breakpoint (md) {
+  @include breakpoint (el) {
     margin-right: 0;
   }
 }
 
 .navigation__link {
   color: $white;
-  @include breakpoint (md) {
+  @include breakpoint (el) {
     display: block;
     padding: 10px;
     padding-left:0;
@@ -169,7 +162,7 @@
   padding-bottom: 9px;
   color: $mainBlue;
   border-bottom: 4px solid $mainBlue;
-  @include breakpoint (md) {
+  @include breakpoint (el) {
     border-bottom: none;
     padding-bottom: 10px;
   }
@@ -177,7 +170,7 @@
 
 .navigation--opened .navigation__link--active,
 .navigation--closed .navigation__link--active {
-  @include breakpoint (md) {
+  @include breakpoint (el) {
     color: $mainBlue;
     border-top: 1px solid $mainBlue;
     border-bottom: 1px solid $mainBlue;
@@ -186,8 +179,8 @@
 
 .language-toggle {
   margin-left: 20px;
-  @media (max-width: 470px) {
-    order: 1;
+  @include breakpoint (el) {
+    margin-left: 0;
   }
 }
 
@@ -206,6 +199,9 @@
 	font-size: 14px;
   text-transform: uppercase;
   color: $mainBlue;
+  @include breakpoint (el) {
+    padding: 10px 20px 10px 0;
+  }
 }
 
 .language-toggle__link::before {
@@ -216,7 +212,7 @@
   height: 34px;
   margin-top: -17px;
   background-color: $mainBlue;
-  @media (max-width: 470px) {
+  @include breakpoint (el) {
     display: none;
   }
 }
@@ -239,6 +235,9 @@
 
 .banner {
   padding-bottom: 420px;
+  @media (max-width: 860px) {
+    padding-bottom: 380px;
+  }
 }
 
 .banner__container {
@@ -246,6 +245,9 @@
   z-index: 2;
   flex-direction: column;
   align-items: flex-start;
+  @media (max-width: 860px) {
+    align-items: center;
+  }
 }
 
 .banner__title {
@@ -254,8 +256,13 @@
   font-weight: 700;
   font-size: 72px;
   color: $white;
-  @include breakpoint (md) {
+  @media (max-width: 860px) {
+    max-width: 100%;
     margin-top: 50px;
+    font-size: 60px;
+    text-align: center;
+  }
+  @include breakpoint (md) {
     font-size: 48px;
   }
   @include breakpoint (sm) {
@@ -266,6 +273,9 @@
 
 .banner__title--big {
   font-size: 100px;
+  @media (max-width: 860px) {
+    font-size: 80px;
+  }
   @include breakpoint (md) {
     font-size: 60px;
   }
@@ -276,9 +286,15 @@
 
 .banner__paragraph {
   max-width: 600px;
+  width: 100%;
   margin-top: 40px;
   font-size: 24px;
   color: $white;
+  @media (max-width: 860px) {
+    max-width: 100%;
+    margin-top: 50px;
+    text-align: center;
+  }
   @include breakpoint (md) {
     margin-top: 20px;
     font-size: 18px;
@@ -290,7 +306,7 @@
   font-size: 30px;
   padding: 30px 100px;
   box-shadow: 0 0 23.28px 0.72px rgba(0, 0, 0, 0.46);
-  @include breakpoint (md) {
+  @media (max-width: 860px) {
     margin-top: 30px;
     padding: 30px 50px;
     font-size: 28px;
@@ -301,11 +317,5 @@
   }
 }
 
-/*.banner__button:hover,
-.banner__button:focus,
-.banner__button:active {
-  color: $grey;
-  background-color: $yellow;
-}*/
 
 

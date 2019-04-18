@@ -1,0 +1,66 @@
+<div class="modal">
+<section class="popup popup-application">
+  <h2 class="popup-application__title">Форма заявки</h2>
+  <form class="popup-application__form" action="#">
+    <div class="popup-application__left-wrapper">
+      <div class="popup-application__list-wrapper">
+        <h3 class="popup-application__list-title popup-application__subtitle">Категория</h3>
+        <ul class="popup-application__list popup-application__field popup-application__list--closed">
+          <li class="popup-application__item"> <label class="popup-application__class"> <input class="popup-application__field visually-hidden" type="checkbox"> <span class="popup-application__class-text">A</span> </label> </li>
+          <li class="popup-application__item popup-application__item--active"> <label class="popup-application__class"> <input class="popup-application__field visually-hidden" type="checkbox" checked> <span class="popup-application__class-text">B</span> </label> </li>
+          <li class="popup-application__item"> <label class="popup-application__class"> <input class="popup-application__field visually-hidden" type="checkbox"> <span class="popup-application__class-text">C</span> </label> </li>
+          <li class="popup-application__item"> <label class="popup-application__class"> <input class="popup-application__field visually-hidden" type="checkbox"> <span class="popup-application__class-text">D</span> </label> </li>
+          <li class="popup-application__item popup-application__item--active"> <label class="popup-application__class"> <input class="popup-application__field visually-hidden" type="checkbox" checked> <span class="popup-application__class-text">CE</span> </label> </li>
+        </ul>
+        <button class="popup-application__list-button" type="button"><span class="visually-hidden">Кнопка списка</span></button>
+      </div>
+      <label class="popup-application__subtitle"> <span class="popup-application__subtitle-text"> Имя</span> <input class="popup-application__field" type="text" required></label>
+      <label class="popup-application__subtitle"> <span class="popup-application__subtitle-text"> Фамилия</span> <input class="popup-application__field" type="text" required></label>
+      <label class="popup-application__subtitle"> <span class="popup-application__subtitle-text"> Контактный телефон</span> <input class="popup-application__field" type="text" required></label>
+      <label class="popup-application__subtitle"> <span class="popup-application__subtitle-text">E-mail</span> <input class="popup-application__field" type="email" required></label>
+      <p class="popup-application__paragraph">Нужна доставка? (необязательно)</p>
+      <div class="popup-application__adress-wrapper">
+        <h3 class="popup-application__subtitle-legend">Адрес для отправки</h3>
+        <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Страна</span><input class="popup-application__field" type="text" placeholder="Страна"></label>
+        <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Город</span><input class="popup-application__field" type="text" placeholder="Город"></label>
+        <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Улица</span><input class="popup-application__field" type="text" placeholder="Улица"></label>
+        <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Дом</span><input class="popup-application__field" type="text" placeholder="Дом"></label>
+        <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Квартира</span><input class="popup-application__field" type="text" placeholder="Квартира"></label>
+        <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Индекс</span><input class="popup-application__field" type="text" placeholder="Индекс"></label>
+      </div>
+    </div>
+    <div class="popup-application__right-wrapper">
+      <div class="popup-application__list-wrapper">
+        <h2 class="popup-application__list-title popup-application__subtitle">Страна</h2>
+        <ul class="popup-application__list popup-application__field popup-application__list--closed">
+          <li class="popup-application__item"> <label class="popup-application__class"> <input class="popup-application__field visually-hidden" type="radio"> <span class="popup-application__class-text">Россия</span> </label> </li>
+          <li class="popup-application__item popup-application__item--active"> <label class="popup-application__class"> <input class="popup-application__field visually-hidden" type="checkbox" checked> <span class="popup-application__class-text">Россия</span> </label> </li>
+          <li class="popup-application__item"> <label class="popup-application__class"> <input class="popup-application__field visually-hidden" type="radio"> <span class="popup-application__class-text">Россия</span> </label> </li>
+          <li class="popup-application__item"> <label class="popup-application__class"> <input class="popup-application__field visually-hidden" type="radio"> <span class="popup-application__class-text">Россия</span> </label> </li>
+          <li class="popup-application__item"> <label class="popup-application__class"> <input class="popup-application__field visually-hidden" type="radio"> <span class="popup-application__class-text">Россия</span> </label> </li>
+        </ul>
+        <button class="popup-application__list-button" type="button"><span class="visually-hidden">Кнопка списка</span></button>
+      </div>
+      <label class="popup-application__subtitle"> <span class="popup-application__subtitle-text">Паспорт (лицевая сторона)</span> <input class="popup-application__field popup-application__field--file" type="file" accept=".jpg" required></label>
+      <label class="popup-application__subtitle"> <span class="popup-application__subtitle-text">Паспорт (обратная сторона)</span> <input class="popup-application__field" type="file" accept=".jpg" required></label>
+      <label class="popup-application__subtitle"> <span class="popup-application__subtitle-text">Фото (для водит. удостоверения)</span> <input class="popup-application__field" type="file" accept=".jpg" required></label>
+      <p class="popup-application__add-info">* Фото для водительского удостоверения должно быть высокого качества. Попроси у фотографа оригинальный файл фотографии</p>
+      <label class="popup-application__subtitle"> <span class="popup-application__subtitle-text">Образец подписи</span> <input class="popup-application__field" type="file" accept=".jpg" required></label>
+      <p class="popup-application__paragraph">Уже имеется водительское удостоверение?</p>
+      <label class="popup-application__subtitle"> <span class="popup-application__subtitle-text">Вод. удостов. (лицевая сторона)</span> <input class="popup-application__field" type="file" accept=".jpg"></label>
+      <label class="popup-application__subtitle"> <span class="popup-application__subtitle-text">Вод. удостов. (лицевая сторона)</span> <input class="popup-application__field" type="file" accept=".jpg"></label>
+    </div>
+    <button class="popup-application__button button" type="submit">Отправить заявку</button>
+  </form>
+  <button class="popup-congratulation__button button-close" type="button"><span class="visually-hidden">Закрыть</span></button>
+</section>
+
+<section class="popup popup-congratulation">
+  <h2 class="popup-congratulation__title"><span class="visually-hidden">Поздравление с успешно отправленной заявкой</span></h2>
+  <p class="popup-congratulation__paragraph--bold">Ура!</p>
+  <p class="popup-congratulation__paragraph">Твоя заявка успешно отправлена!</p>
+  <p class="popup-congratulation__paragraph">Сейчас менеджер закончит танцевать и&nbsp;перезвонит тебе!</p>
+  <button class="popup-congratulation__button button-close" type="button"><span class="visually-hidden">Закрыть</span></button>
+</section>
+
+</div>

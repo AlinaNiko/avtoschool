@@ -5,6 +5,9 @@
 .steps {
   padding: 70px 0 120px;
   background-color: #f4f4fb;
+  @include breakpoint (sm) {
+    padding: 70px 0 30px;
+  }
 }
 
 .steps__title {
@@ -26,6 +29,10 @@
   width: 100%;
   @media (max-width: 1169px) {
     justify-content: space-around;
+  }
+  @media (max-width: 620px) {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -51,8 +58,14 @@
     box-shadow: 0 0 47.53px 1.47px rgba(7, 83, 141, 0.13);
     z-index: 1;
   }
-  @include breakpoint (sm) {
+  @media (max-width: 620px) {
     justify-content: flex-start;;
+  }
+}
+
+.steps__item:not(:first-of-type) {
+  @include breakpoint (sm) {
+    margin-top: 20px;
   }
 }
 

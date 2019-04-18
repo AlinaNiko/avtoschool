@@ -66,7 +66,6 @@
 .popup-application__subtitle,
 .popup-application__class,
 .popup-application__paragraph {
-  
   font-weight: 400;
   font-size: 14px;
   color: #777;
@@ -156,11 +155,12 @@
 }
 
 .popup-application__adress-wrapper {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 20px;
   padding: 20px 10px;
   border: 2px solid #eee;
   @include breakpoint (md) {
@@ -172,6 +172,10 @@
 }
 
 .popup-application__subtitle-legend {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: -10px;
   margin-left: 10px;
   padding: 0 10px;
   font-weight: 400;
@@ -208,13 +212,42 @@
   }
 }
 
+.popup-application__file {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #777;
+  border: 2px solid #eee;
+  cursor: pointer;
+  background: $white url("../images/clip.png")  no-repeat;
+  background-position: center right 20px;
+}
+
+.popup-application__file-text {
+  position: absolute;
+  top: -10px;
+  left: 10px; 
+  padding: 0 10px;
+  background-color: $white;
+}
+
 .popup-application__add-info {
   margin-top: 10px;
-  font-size: 10px;
+  font-size: 12px;
+}
+
+.popup-application__file--sign {
+  margin-top: 20px;
 }
 
 .popup-application__button {
-  margin: 30px auto 0;
+  min-width: 260px;
+  margin: 30px auto;
   padding: 15px 30px;
   font-weight: 700;
   font-size: 18px;
@@ -246,7 +279,6 @@
     background: $white;
     text-align: center;
   }
-
 }
 
 .popup-congratulation__paragraph--bold {
@@ -267,7 +299,6 @@
   @include breakpoint (md) {
     font-size: 18px;
   }
-  
 }
 
 .popup-congratulation__paragraph:last-of-type {
@@ -304,15 +335,10 @@
 }
 
 
-
 //Popup-display
 
 .modal {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -323,13 +349,19 @@
 
 .popup {
   display: none;
-  box-shadow: 0 0 100px rgba(35,35,35,.8);
+  position: relative;
+  z-index: 300;
   overflow-x: hidden;
   overflow-y: auto;
+  width: 100%;
+  box-shadow: 0 0 100px rgba(35,35,35,.8);
 }
 
 .popup-application {
   display: block;
+  @include breakpoint (md) {
+    height: 100%;
+  }
 }
 
 .popup-congratulation {

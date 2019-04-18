@@ -1,9 +1,10 @@
+<div class="modal">
 <section class="popup popup-application">
   <h2 class="popup-application__title">Форма заявки</h2>
   <form class="popup-application__form" action="#">
     <div class="popup-application__left-wrapper">
       <div class="popup-application__list-wrapper">
-        <h2 class="popup-application__list-title popup-application__subtitle">Категория</h2>
+        <h3 class="popup-application__list-title popup-application__subtitle">Категория</h3>
         <ul class="popup-application__list popup-application__field popup-application__list--closed">
           <li class="popup-application__item"> <label class="popup-application__class"> <input class="popup-application__field visually-hidden" type="checkbox"> <span class="popup-application__class-text">A</span> </label> </li>
           <li class="popup-application__item popup-application__item--active"> <label class="popup-application__class"> <input class="popup-application__field visually-hidden" type="checkbox" checked> <span class="popup-application__class-text">B</span> </label> </li>
@@ -18,15 +19,15 @@
       <label class="popup-application__subtitle"> <span class="popup-application__subtitle-text"> Контактный телефон</span> <input class="popup-application__field" type="text" required></label>
       <label class="popup-application__subtitle"> <span class="popup-application__subtitle-text">E-mail</span> <input class="popup-application__field" type="email" required></label>
       <p class="popup-application__paragraph">Нужна доставка? (необязательно)</p>
-      <fieldset class="popup-application__adress-wrapper">
-        <legend class="popup-application__subtitle-legend">Адрес для отправки</legend>
-          <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Страна</span><input class="popup-application__field" type="text" placeholder="Страна"></label>
-          <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Город</span><input class="popup-application__field" type="text" placeholder="Город"></label>
-          <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Улица</span><input class="popup-application__field" type="text" placeholder="Улица"></label>
-          <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Дом</span><input class="popup-application__field" type="text" placeholder="Дом"></label>
-          <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Квартира</span><input class="popup-application__field" type="text" placeholder="Квартира"></label>
-          <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Индекс</span><input class="popup-application__field" type="text" placeholder="Индекс"></label>
-      </fieldset>
+      <div class="popup-application__adress-wrapper">
+        <h3 class="popup-application__subtitle-legend">Адрес для отправки</h3>
+        <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Страна</span><input class="popup-application__field" type="text" placeholder="Страна"></label>
+        <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Город</span><input class="popup-application__field" type="text" placeholder="Город"></label>
+        <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Улица</span><input class="popup-application__field" type="text" placeholder="Улица"></label>
+        <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Дом</span><input class="popup-application__field" type="text" placeholder="Дом"></label>
+        <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Квартира</span><input class="popup-application__field" type="text" placeholder="Квартира"></label>
+        <label class="popup-application__subtitle popup-application__subtitle--adress"><span class="visually-hidden">Индекс</span><input class="popup-application__field" type="text" placeholder="Индекс"></label>
+      </div>
     </div>
     <div class="popup-application__right-wrapper">
       <div class="popup-application__list-wrapper">
@@ -61,3 +62,5 @@
   <p class="popup-congratulation__paragraph">Сейчас менеджер закончит танцевать и&nbsp;перезвонит тебе!</p>
   <button class="popup-congratulation__button button-close" type="button"><span class="visually-hidden">Закрыть</span></button>
 </section>
+
+</div>

@@ -29,6 +29,7 @@ body {
   color: $grey;
   background: $white;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden; //скрывает горизонтальный скролл?
 }
 
 a {

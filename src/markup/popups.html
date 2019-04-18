@@ -3,7 +3,7 @@
   <form class="popup-application__form" action="#">
     <div class="popup-application__left-wrapper">
       <label class="popup-application__subtitle"> Категория
-        <select class="popup-application__license" name="license" required>
+        <select class="popup-application__license license" required>
           <option class="license__item">A</option>
           <option class="license__item">B</option>
           <option class="license__item">C</option>
@@ -15,15 +15,45 @@
       <label class="popup-application__subtitle">Фамилия<input class="popup-application__surname" type="text" required></label>
       <label class="popup-application__subtitle">Контактный телефон<input class="popup-application__phone" type="text" required></label>
       <label class="popup-application__subtitle">E-mail<input class="popup-application__email" type="email" required></label>
-      <label class="popup-application__subtitle"><input class="popup-application__delivery" type="checkbox">Нужна доставка (необязательно)</label>
-      <fieldset class="">
-
+      <p class="popup-application__paragraph">Нужна доставка? (необязательно)</p>
+      <fieldset class="popup-application__adress-wrapper">
+        <legend class="popup-application__subtitle-legend">
+          <label class="popup-application__subtitle"><span class="visually-hidden">Страна</span><input class="popup-application__country" type="text" placeholder="Страна"></label>
+          <label class="popup-application__subtitle"><span class="visually-hidden">Город</span><input class="popup-application__city" type="text" placeholder="Город"></label>
+          <label class="popup-application__subtitle"><span class="visually-hidden">Улица</span><input class="popup-application__street" type="text" placeholder="Улица"></label>
+          <label class="popup-application__subtitle"><span class="visually-hidden">Дом</span><input class="popup-application__house" type="text" placeholder="Дом"></label>
+          <label class="popup-application__subtitle"><span class="visually-hidden">Квартира</span><input class="popup-application__apartment" type="text" placeholder="Квартира"></label>
+          <label class="popup-application__subtitle"><span class="visually-hidden">Индекс</span><input class="popup-application__index" type="text" placeholder="Индекс"></label>
+        </legend>
       </fieldset>
     </div>
-    <div class="popup-application__right-wrapper"></div>
+    <div class="popup-application__right-wrapper">
+      <label class="popup-application__subtitle"> Страна
+        <select class="popup-application__license-country license-country" required>
+          <option class="license-country__item">Россия</option>
+          <option class="license-country__item">Россия</option>
+          <option class="license-country__item">Россия</option>
+          <option class="license-country__item">Россия</option>
+          <option class="license-country__item">Россия</option>
+        </select>
+      </label>
+      <label class="popup-application__subtitle">Паспорт (лицевая сторона)<input class="popup-application__passport-front" type="file" accept=".jpg" required placeholder="Название файла.jpg"></label>
+      <label class="popup-application__subtitle">Паспорт (обратная сторона)<input class="popup-application__passport-back" type="file" accept=".jpg" required placeholder="Название файла.jpg"></label>
+      <label class="popup-application__subtitle">Фото (для водит. удостоверения)<input class="popup-application__passport-front" type="file" accept=".jpg" required placeholder="Название файла.jpg"></label>
+      <p class="popup-application__add-info">* Фото для водительского удостоверения должно быть высокого качества. Попроси у фотографа оригинальный файл фотографии</p>
+      <label class="popup-application__subtitle">Образец подписи<input class="popup-application__signature" type="file" accept=".jpg" required placeholder="Название файла.jpg"></label>
+      <p class="popup-application__paragraph">Уже имеется водительское удостоверение?</p>
+      <label class="popup-application__subtitle">Вод. удостов. (лицевая сторона)<input class="popup-application__signature" type="file" accept=".jpg" required placeholder="Название файла.jpg"></label>
+      <label class="popup-application__subtitle">Вод. удостов. (лицевая сторона)<input class="popup-application__signature" type="file" accept=".jpg" required placeholder="Название файла.jpg"></label>
+    </div>
+    <button class="popup-application__button button" type="submit">Отправить заявку</button>
   </form>
 </section>
 
 <section class="popup popup-congratulation">
-  
-  </section>
+  <h2 class="popup-congratulation__title"><span class="visually-hidden">Поздравление с успешно отправленной заявкой</span></h2>
+  <p class="popup-congratulation__paragraph--bold">Ура!</p>
+  <p class="popup-congratulation__paragraph">Твоя заявка успешно отправлена!</p>
+  <p class="popup-congratulation__paragraph">Сейчас менеджер закончит танцевать и&nbsp;перезвонит тебе!</p>
+  <button class="popup-congratulation__button button-close" type="button"><span class="visually-hidden">Закрыть</span></button>
+</section>

@@ -36,6 +36,8 @@
   }
 }
 
+
+
 .top-bar__logo {
   min-width: 96px;
 }
@@ -90,12 +92,14 @@
 .navigation--opened .navigation__toggle {
   top: 2px;
   right: 5px;
+  
   &::before,
   &::after {
     @include pseudo();
     width: 30px;
     height: 4px;
     background-color: $mainBlue;
+    transition: background-color .3s ease-out;
   }
   &::before {
     transform: rotate(45deg);
@@ -148,6 +152,7 @@
 
 .navigation__link {
   color: $white;
+  transition: color .3s ease-out;
   @include breakpoint (el) {
     display: block;
     padding: 10px;

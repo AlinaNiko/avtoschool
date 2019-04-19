@@ -293,6 +293,7 @@
     width: 30px;
     height: 4px;
     background-color: $mainBlue;
+    transition: background-color .3s ease-out;
   }
   &::before {
     transform: rotate(45deg);

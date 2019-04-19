@@ -64,6 +64,7 @@
 
 .footer-navigation__link {
   color: $white;
+  transition: color .3s ease-out;
   @include breakpoint (el) {
     display: block;
     padding: 10px;
@@ -148,6 +149,9 @@
   font-weight: 400;
   font-size: 14px;
   color: $white;
+  &:hover {
+    text-decoration: underline;
+  }
   &::before {
     @include pseudo();
     top: 50%;

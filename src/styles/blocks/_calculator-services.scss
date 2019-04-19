@@ -273,6 +273,7 @@
   text-transform: uppercase;
   border: 3px solid $mainBlue;
   border-radius: 20px;
+  transition: background-color .3s ease-out;
   &:hover {
     color: $white;
     background-color: $mainBlue;

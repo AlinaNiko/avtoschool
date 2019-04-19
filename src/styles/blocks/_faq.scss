@@ -27,13 +27,14 @@
 }
 
 .faq__subtitle {
+  position: relative;
   padding: 30px 100px;
   font-weight: 600;
   font-size: 30px;
   background-color: #f9f9f9;
   list-style: none;
   cursor: pointer;
-   position: relative;
+  transition: background-color .3s ease-out;
   &::before,
   &::after {
     @include pseudo();

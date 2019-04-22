@@ -81,6 +81,7 @@
   font-size: 18px;
   text-decoration: underline;
   color: $grey;
+  transition: color .3s ease-out;
   @include breakpoint (md) {
     margin-top: 30px;
     font-size: 14px;

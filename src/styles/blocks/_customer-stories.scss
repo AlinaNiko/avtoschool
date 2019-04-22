@@ -156,6 +156,7 @@
   border-radius: 50%;
   background-color: #f9f9f9;
   box-shadow: inset 0 0 16px 0px rgba(0, 0, 0, 0.38);
+  transition: background-color .3s ease-out;
 }
 
 .customer-stories__toggle:not(:last-of-type) {

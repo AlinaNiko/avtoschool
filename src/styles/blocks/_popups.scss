@@ -2,9 +2,8 @@
 @import '../helpers/mixins';
 
 
-//Application-form
-
-.popup-application {
+//Request-form
+.request {
   position: relative;
   max-width: 770px;
   margin: 0 auto;
@@ -16,7 +15,7 @@
   }
 }
 
-.popup-application__title {
+.request__title {
   width: 100%;
   font-weight: 400;
   font-size: 16px;
@@ -24,7 +23,7 @@
   text-transform: uppercase;
 }
 
-.popup-application__form {
+.request__form {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -34,11 +33,8 @@
   }
 }
 
-.popup-application__left-wrapper,
-.popup-application__right-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.request__left-column,
+.request__right-column {
   width: 50%;
   min-width: 260px;
   padding: 0 10px;
@@ -48,173 +44,185 @@
   }
 }
 
-.popup-application__list--opened .popup-application__item {
+
+.common-relative {
   position: relative;
-  padding: 10px 0;
-  min-height: 40px;
 }
 
-.popup-application__list--opened .popup-application__class {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  line-height: 2.8;
-}
-
-.popup-application__subtitle,
-.popup-application__class,
-.popup-application__paragraph {
-  
-  font-weight: 400;
-  font-size: 14px;
-  color: #777;
-}
-
-.popup-application__subtitle {
-  margin-top: 10px;
-}
-
-.popup-application__list--closed .popup-application__class {
-  margin-left: 10px;
-}
-
-.popup-application__field,
-.license-country {
+.common-field {
   display: block;
   width: 100%;
   min-height: 40px;
-  margin-top: -10px;
   padding: 10px 20px;
+  margin-top: 20px;
   border: 2px solid #eee;
 }
 
-.popup-application__list-title {
-  display: inline-block;
+.common-subtitle {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  display: block;
+  padding: 0 10px;
 }
 
-.popup-application__subtitle-text,
-.popup-application__list-title {
-  padding: 0 10px;
-  margin-left: 20px;
+.common-subtitle,
+.attached__paragraph,
+.attached__placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  color: #777;
   background-color: $white;
 }
 
-.popup-application__list--closed .popup-application__item {
+
+.category__list--closed .category__item,
+.country__list--closed .country__item {
   display: none;
     &--active {
       display: inline-block;
     }
 }
 
-.popup-application__list--opened .popup-application__item:not(:last-of-type) {
-  border-bottom: .4px solid #eee;
-}
-
-.popup-application__item:hover,
-.popup-application__class:hover {
-  cursor: pointer;
-}
-
-.popup-application__list--opened .popup-application__item:hover,
-.popup-application__list--opened .popup-application__item:active,
-.popup-application__list--opened .popup-application__item:focus {
-  background-color: #eee;
-}
-
-.popup-application__field:checked + .popup-application__class-text {
-  color: $mainBlue;
-}
-
-.popup-application__list-wrapper {
-  position: relative;
-}
-
-.popup-application__list-button {
-  position: absolute;
-  top: 40px;
-  right: 20px;
-  width: 0; 
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 12px solid $mainBlue;
-}
-
-.popup-application__list--closed + .popup-application__list-button {
-  top: 35px;
-}
-
-.popup-application__list--opened + .popup-application__list-button {
-  transform: rotate(90deg);
-}
-
-.popup-application__paragraph {
-  margin-top: 20px;
-  text-decoration: underline;
-}
-
-.popup-application__adress-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 10px;
-  padding: 20px 10px;
-  border: 2px solid #eee;
-  @include breakpoint (md) {
-    justify-content: space-around;
-  }
-  @media (max-width: 360px) {
-    flex-direction: column;
-  }
-}
-
-.popup-application__subtitle-legend {
-  margin-left: 10px;
+.category__list--closed .category__field,
+.country__list--closed .country__field {
+  border: none;
   padding: 0 10px;
+  min-height: 20px;
+  margin: 0;
+}
+
+.customer-contacts__item  {
+  padding: 0;
+}
+
+.customer-contacts__field {
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  border: none;
+}
+
+.delivery__paragraph,
+.attached__paragraph {
+  margin-top: 20px;
   font-weight: 400;
   font-size: 14px;
   color: #777;
-  background-color: $white;
+  text-decoration: underline;
 }
 
-.popup-application__subtitle--adress {
+.attached__add-info {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #757474;
+}
+
+.delivery__fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 10px;
+  @include breakpoint (md) {
+    justify-content: space-around;
+  }
+}
+
+.delivery__item {
   width: 130px;
-  margin-left: 0;
-  margin-top: 20px;
-  @media (max-width: 360px) {
+  @include breakpoint (md) {
+    width: calc((100% - 20px) / 3);
+  }
+  @include breakpoint (sm) {
+    width: calc((100% - 20px) / 2);
+  }
+  @media (max-width: 440px) {
     width: 100%;
   }
 }
 
-.license-country {
-  appearance: none;
-  cursor: pointer;
-}
-
-.popup-application__select-country {
-  position: relative;
-  &::before {
-    @include pseudo();
-    top: 20px;
-    right: 20px;
-    width: 0; 
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 12px solid $mainBlue;
+.delivery__field {
+  margin: 0 0 10px;
+  padding: 5px 10px;
+  @include placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    color: #aaa;
   }
 }
 
-.popup-application__add-info {
-  margin-top: 10px;
-  font-size: 10px;
+.category__checkbox:checked + .category__checkbox-text,
+.country__radio:checked + .country__radio-text {
+  font-weight: 700;
+  color: $mainBlue;
 }
 
-.popup-application__button {
-  margin: 30px auto 0;
+.category__list--opened .category__field,
+.country__list--opened .country__field {
+  &:hover {
+    background-color: #eee;
+  }
+}
+
+.category,
+.category__field,
+.country,
+.country__field,
+.attached__field {
+  cursor: pointer;
+}
+
+.request__right-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.attached {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.attached__field--signature {
+  margin-top: 30px;
+  @include breakpoint (md) {
+    margin-top: 20px;
+  }
+}
+
+.attached__paragraph--have-license {
+  //margin-top: 40.5px;
+  @include breakpoint (md) {
+    margin-top: 20px;
+  }
+}
+
+.attached__field {
+  background: $white url("../images/clip.png") center right 20px no-repeat;
+}
+
+.category__button,
+.country__button {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 20px;
+  height: 10px;
+  background: url("../images/css_sprites.png") -48px -406px no-repeat;
+}
+
+.category__list--opened + .category__button,
+.country__list--opened + .country__button {
+  display: none;
+}
+
+.request__button {
+  min-width: 260px;
+  margin: 30px auto;
   padding: 15px 30px;
   font-weight: 700;
   font-size: 18px;
@@ -225,7 +233,7 @@
 
 //Congratulation
 
-.popup-congratulation {
+.congratulation {
   position: relative;
   max-width: 960px;
   margin: 0 auto;
@@ -246,10 +254,9 @@
     background: $white;
     text-align: center;
   }
-
 }
 
-.popup-congratulation__paragraph--bold {
+.congratulation__paragraph--bold {
   margin-top: 140px;
   font-weight: 900;
   font-size: 36px;
@@ -261,16 +268,15 @@
   }
 }
 
-.popup-congratulation__paragraph {
+.congratulation__paragraph {
   margin-top: 25px;
   font-size: 24px;
   @include breakpoint (md) {
     font-size: 18px;
   }
-  
 }
 
-.popup-congratulation__paragraph:last-of-type {
+.congratulation__paragraph:last-of-type {
   margin-bottom: 215px;
   @include breakpoint (sm) {
     margin-bottom: 70px;
@@ -287,6 +293,7 @@
     width: 30px;
     height: 4px;
     background-color: $mainBlue;
+    transition: background-color .3s ease-out;
   }
   &::before {
     transform: rotate(45deg);
@@ -304,34 +311,41 @@
 }
 
 
-
 //Popup-display
-
 .modal {
+  display: none;
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
+  //display: flex;
   justify-content: center;
   align-items: center;
   z-index: 100;
 }
 
-.popup {
+.modal__popup {
   display: none;
-  box-shadow: 0 0 100px rgba(35,35,35,.8);
+  position: relative;
+  z-index: 300;
   overflow-x: hidden;
   overflow-y: auto;
+  width: 100%;
+  box-shadow: 0 0 100px rgba(35,35,35,.8);
 }
 
-.popup-application {
+.request {
   display: block;
+  @include breakpoint (md) {
+    height: 100%;
+  }
 }
 
-.popup-congratulation {
+.congratulation {
   display: none;
 }
+
+
+
+
+
+

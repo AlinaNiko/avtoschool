@@ -28,18 +28,17 @@
   flex-wrap: nowrap;
 	justify-content: space-between;
   align-items: flex-start;
-  @include breakpoint (el) {
-    align-items: center;
-  }
+  
   @include breakpoint (sm) {
     flex-wrap: wrap;
   }
 }
 
-
-
 .top-bar__logo {
   min-width: 96px;
+  @include breakpoint (el) {
+    margin-top: 5px;
+  }
 }
 
 .top-bar__logo-image {
@@ -69,36 +68,40 @@
 
 .navigation__toggle {
   display: none;
-  @include breakpoint (el) {
-    position: absolute;
-    top: 9px;
-    right: 5px;
-    display: block;
-    width: 30px;
-    height: 30px;
-  }
-}
-
-.navigation--closed .navigation__toggle::before {
-  @include pseudo();
-  top: 0;
-  right: 0;
-  width: 30px;
-  height: 4px;
-  background-color: $mainBlue;
-  box-shadow: 0 8px 0 0 $mainBlue, 0 16px 0 0 $mainBlue;
-}
-
-.navigation--opened .navigation__toggle {
-  top: 2px;
-  right: 5px;
-  
-  &::before,
+  position: relative;
+  min-height: 34px;
+  padding-right: 50px;
+  font-weight: 600;
+	font-size: 14px;
+  text-transform: uppercase;
+  color: $mainBlue;
+  text-align: left;
+  border-top: 1px solid $mainBlue;
+  border-bottom: 1px solid $mainBlue;
   &::after {
     @include pseudo();
     width: 30px;
     height: 4px;
+    right: 0;
+    top: 6px;
     background-color: $mainBlue;
+    box-shadow: 0 8px 0 0 $mainBlue, 0 16px 0 0 $mainBlue;
+  }
+  @include breakpoint (el) {
+    display: block;
+  }
+}
+
+.navigation--opened .navigation__toggle {
+  &::before,
+  &::after {
+    @include pseudo();
+    top: 14px;
+    right: 0;
+    width: 30px;
+    height: 4px;
+    background-color: $mainBlue;
+    box-shadow: none;
     transition: background-color .3s ease-out;
   }
   &::before {
@@ -131,9 +134,6 @@
 .navigation--closed .navigation__item {
   @include breakpoint(el) {
     display: none;
-    &--active {
-      display: block;
-    }
   }
 }
 
@@ -176,12 +176,11 @@
   }
 }
 
-.navigation--opened .navigation__link--active,
-.navigation--closed .navigation__link--active {
-  @include breakpoint (el) {
+.navigation--opened .navigation__link--active {
+  color: $white;
+  &:hover {
     color: $mainBlue;
-    border-top: 1px solid $mainBlue;
-    border-bottom: 1px solid $mainBlue;
+    cursor: pointer;
   }
 }
 

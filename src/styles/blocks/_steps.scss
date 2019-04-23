@@ -45,7 +45,8 @@
   min-width: 270px;
   min-height: 400px;
   margin-top: 48px;
-  padding-top: 220px;
+  //padding-top: 220px;
+  padding: 220px 5px 0;
   &::before {
     @include pseudo();
     top: 0;
@@ -58,8 +59,14 @@
     box-shadow: 0 0 47.53px 1.47px rgba(7, 83, 141, 0.13);
     z-index: 1;
   }
+  @media (max-width: 1139px) {
+    width: calc((100% - 270px) / 2);
+  }
+  @media (max-width: 900px) {
+    width: calc((100% - 180px) / 2);
+  }
   @media (max-width: 620px) {
-    justify-content: flex-start;;
+    justify-content: flex-start;
   }
 }
 
@@ -70,7 +77,7 @@
 }
 
 .steps__item:not(:last-of-type) {
-  margin-right: 10px;
+  //margin-right: 10px;
   &::after {
     @include pseudo();
     top: 50%;
@@ -80,7 +87,7 @@
     height: 155px;
     background: url("../images/car-track.png") no-repeat;
     z-index: 0;
-    @media (max-width: 1169px) {
+    @media (max-width: 1139px) {
       display: none;
     }
   }

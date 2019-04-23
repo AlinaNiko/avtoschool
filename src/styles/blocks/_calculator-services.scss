@@ -153,6 +153,7 @@
   text-transform: uppercase;
   border-radius: 50px;
   cursor: pointer;
+  transition: background-color .3s ease-out;
 }
 
 .form__radio-button:checked + .form__radio-text {

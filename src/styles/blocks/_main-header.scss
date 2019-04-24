@@ -205,6 +205,7 @@
   font-weight: 600;
 	font-size: 14px;
   text-transform: uppercase;
+  vertical-align: top;
   color: $mainBlue;
   @include breakpoint (el) {
     padding: 10px 20px 10px 0;

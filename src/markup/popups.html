@@ -1,5 +1,5 @@
-<div class="modal">
-  <section class="modal__popup request">
+<div class="modal modal--closed"> <!--modal--closed-->
+  <section class="modal__popup request request--opened">
     <h2 class="request__title">Форма заявки</h2>
     <form class="request__form" action="#">
       <div class="request__left-column">
@@ -68,11 +68,12 @@
     </form>
     <button class="request__button-close button-close" type="button"><span class="visually-hidden">Закрыть</span></button>
   </section>
-  <section class="modal__popup congratulation">
+  <section class="modal__popup congratulation congratulation--closed">
     <h2 class="congratulation__title"><span class="visually-hidden">Поздравление с успешно отправленной заявкой</span></h2>
     <p class="congratulation__paragraph--bold">Ура!</p>
     <p class="congratulation__paragraph">Твоя заявка успешно отправлена!</p>
     <p class="congratulation__paragraph">Сейчас менеджер закончит танцевать и&nbsp;перезвонит тебе!</p>
     <button class="congratulation__button-close button-close" type="button"><span class="visually-hidden">Закрыть</span></button>
   </section>
+  <div class="modal-overlay"></div>
 </div>

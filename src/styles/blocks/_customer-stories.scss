@@ -20,6 +20,9 @@
 .customer-stories__list-wrapper {
   position: relative;
   margin-top: 55px;
+  @media (max-width: 1150px) {
+    margin: 55px auto 0;
+  }
 }
 
 .customer-stories__item {
@@ -34,8 +37,9 @@
   position: relative;
   max-width: 960px;
   padding: 70px 280px 70px 70px;
+  background-color: #f9f9f9; 
   box-shadow: 0 0 25.81px 3.19px rgba(26, 26, 26, 0.12);
-  @include breakpoint (md) {
+  @media (max-width: 1150px) {
     padding: 320px 30px 70px 30px;
   }
 }
@@ -74,11 +78,7 @@
     top: 100px;
     right: -200px;
   }
-  @media (max-width: 1080px) {
-    top: 70px;
-    right: -50px;
-  }
-  @include breakpoint (md) {
+  @media (max-width: 1150px) {
     top: 30px;
     right: 50%;
     margin-right: -100px;
@@ -95,31 +95,38 @@
     width: 400px;
     height: 400px;
   }
-  @media (max-width: 1080px) {
-    width: 300px;
-    height: 300px;
-  }
-  @include breakpoint (md) {
+  @media (max-width: 1150px) {
     width: 200px;
     height: 200px;
   }
 }
 
 .story__avatar {
+  position: relative;
   width: 100%;
   height: auto;
   border-radius: 50%;
+  z-index: 10;;
 }
 
 .story__name {
-  margin-top: 30px;
+  position: absolute;
+  bottom: -190px;
+  padding-top: 130px;
+  padding: 130px 40px 90px;
   font-weight: 700;
   font-size: 30px;
   text-transform: uppercase;
   text-align: center;
-  @include breakpoint (md) {
+  background-color: $white;
+  box-shadow: 0 6px 39.2px 0.8px rgba(0, 0, 0, 0.09);
+  @media (max-width: 1150px) {
+    position: static;
     margin-top: 10px;
+    padding: 0;
     font-size: 18px;
+    background-color: transparent;
+    box-shadow: none;
   }
 }
 
@@ -129,7 +136,7 @@
   font-weight: 100;
   font-size: 16px;
   text-transform: none;
-  @include breakpoint (md) {
+  @media (max-width: 1150px) {
     margin-top: 5px;
     font-size: 12px;
   }
@@ -143,7 +150,7 @@
     bottom: 260px;
     right: -53px;
   }
-  @media (max-width: 1080px) {
+  @media (max-width: 1150px) {
     bottom: 25px;
     left: 50%;
     margin-left: -53px; 
